@@ -1,12 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Set fixed dimensions for dynamic elements to prevent layout shifts
+  // Fix layout shifts by pre-calculating heights
+  const projectSection = document.getElementById("projects");
+
+  // Remove content-visibility: auto which can cause layout shifts
+  if (projectSection) {
+    projectSection.style.contentVisibility = "visible";
+  }
+
+  // Set fixed dimensions for project cards to prevent layout shifts
   const projectCards = document.querySelectorAll(".project-card");
   projectCards.forEach((card) => {
-    const height = card.offsetHeight;
-    if (height > 0) {
-      card.style.minHeight = `${height}px`;
+    // Get full content height (including margins, padding)
+    const computedStyle = window.getComputedStyle(card);
+    const cardContent = card.querySelector("p");
+
+    // Set minimum height to ensure all content is visible
+    if (cardContent) {
+      const contentHeight =
+        cardContent.scrollHeight +
+        parseInt(computedStyle.paddingTop) +
+        parseInt(computedStyle.paddingBottom) +
+        card.querySelector("h3").offsetHeight +
+        60; // Extra space for links
+
+      card.style.minHeight = `${contentHeight}px`;
     }
   });
+
   // Smooth scrolling for navigation links
   const navLinks = document.querySelectorAll(".nav-link");
 
