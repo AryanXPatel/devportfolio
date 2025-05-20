@@ -32,27 +32,91 @@
         margin: 0;
         background-color: #101214;
         color: #7a7c80;
+        min-height: 100vh;
       }
+
+      /* Fix layout stability */
+      .grid-2 {
+        display: block;
+        min-height: 100vh;
+      }
+
       .section-1 {
+        box-sizing: border-box;
         padding: 2rem 1.5rem;
         position: fixed;
         width: 300px;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
       }
+
       .section-2 {
+        box-sizing: border-box;
         margin-left: 300px;
         padding: 2rem;
+        min-height: 100vh;
       }
+
+      /* Reserve space for large elements */
+      .fas.fa-code.fa-5x {
+        height: 80px;
+        width: 80px;
+        display: block;
+        margin: 0 auto 1.5rem;
+      }
+
+      /* Set explicit heights for containers */
+      .project-card {
+        min-height: 150px;
+      }
+
+      /* Section height reservations */
+      .about-section,
+      .projects-section,
+      .contact-section {
+        min-height: 150px;
+      }
+
       @media (max-width: 992px) {
         .section-1 {
           position: relative;
           width: 100%;
           height: auto;
+          min-height: 200px;
         }
         .section-2 {
           margin-left: 0;
+          width: 100%;
         }
+      }
+    </style>
+
+    <!-- Add font-display swap to prevent layout shifts from font loading -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Force Font Awesome to have specific dimensions early -->
+    <style>
+      .fab,
+      .fas {
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+        display: inline-block;
+      }
+      .fa-5x {
+        width: 5em;
+        height: 5em;
       }
     </style>
 
@@ -70,6 +134,7 @@
       href="style.css"
       media="print"
       onload="this.media='all'"
+      fetchpriority="high"
     />
     <noscript><link rel="stylesheet" href="style.css" /></noscript>
 
@@ -83,7 +148,7 @@
     <!-- ...existing body content... -->
     <div class="grid-2">
       <div class="section-1">
-        <i class="fas fa-code fa-5x white"></i>
+        <i class="fas fa-code fa-5x white" aria-hidden="true"></i>
         <h1>Aryan Patel</h1>
         <p>Ahmedabad, India</p>
         <div class="social-icons">
@@ -150,7 +215,11 @@
           </div>
         </section>
 
-        <section id="projects" class="projects-section">
+        <section
+          id="projects"
+          class="projects-section"
+          style="content-visibility: auto; contain-intrinsic-size: 0 500px"
+        >
           <h2>Projects</h2>
           <div class="project-cards">
             <div class="project-card">
@@ -226,7 +295,11 @@
           </div>
         </section>
 
-        <section id="contact" class="contact-section">
+        <section
+          id="contact"
+          class="contact-section"
+          style="content-visibility: auto; contain-intrinsic-size: 0 200px"
+        >
           <h2>Contact</h2>
           <p>
             I'm currently open to new opportunities. Feel free to reach out if
