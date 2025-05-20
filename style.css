@@ -5,7 +5,7 @@
   --bg-color: #101214;
   --bg-secondary: rgba(0, 0, 0, 0.3);
   --card-bg: rgba(255, 255, 255, 0.05);
-  --text-color: #7a7c80;
+  --text-color: #b0b3b8;
   --text-light: #999;
   --text-bright: #fff;
   --accent-color: #3498db;
@@ -226,9 +226,13 @@ ul {
   contain: content; /* Changed from layout to allow better content sizing */
 }
 
-.project-card:hover {
+/* .project-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--box-shadow);
+} */
+.project-card:hover {
+  transform: scale(1.02);
+  border-left: 3px solid var(--hover-color);
 }
 
 .project-card h3 {
