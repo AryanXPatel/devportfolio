@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Set fixed dimensions for dynamic elements to prevent layout shifts
+  const projectCards = document.querySelectorAll(".project-card");
+  projectCards.forEach((card) => {
+    const height = card.offsetHeight;
+    if (height > 0) {
+      card.style.minHeight = `${height}px`;
+    }
+  });
   // Smooth scrolling for navigation links
   const navLinks = document.querySelectorAll(".nav-link");
 
