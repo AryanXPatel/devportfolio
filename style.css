@@ -218,10 +218,12 @@ ul {
   padding: 1.8rem;
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to allow content to be fully visible */
   border-left: 3px solid var(--accent-color);
-  aspect-ratio: 3/2;
-  contain: layout;
+  /* Remove aspect-ratio to allow natural content height */
+  min-height: 200px; /* Minimum height to ensure consistency */
+  height: auto; /* Allow height to adapt to content */
+  contain: content; /* Changed from layout to allow better content sizing */
 }
 
 .project-card:hover {
@@ -231,10 +233,16 @@ ul {
 
 .project-card h3 {
   margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .project-card p {
   margin-bottom: 1.2rem;
+  /* Ensure text is fully readable */
+  display: -webkit-box;
+  -webkit-line-clamp: initial; /* Remove line clamping */
+  -webkit-box-orient: vertical;
+  overflow: visible;
 }
 
 .project-card a {
@@ -246,6 +254,27 @@ ul {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+/* Responsive adjustments for project cards */
+@media (min-width: 993px) {
+  .project-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1.5rem;
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-card {
+    padding: 1.2rem;
+    min-height: 150px;
+  }
 }
 
 .view-live,
