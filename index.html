@@ -3,20 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Preconnect to Cloudflare CDN -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Load critical CSS inline -->
+    <style>
+      /* Minimal critical CSS for first paint */
+      body {
+        font-family: sans-serif; /* Fallback font */
+        margin: 0;
+        background-color: #101214;
+        color: #7a7c80;
+      }
+      .section-1 {
+        padding: 2rem 1.5rem;
+        position: fixed;
+        width: 300px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .section-2 {
+        margin-left: 300px;
+        padding: 2rem;
+      }
+      @media (max-width: 992px) {
+        .section-1 {
+          position: relative;
+          width: 100%;
+          height: auto;
+        }
+        .section-2 {
+          margin-left: 0;
+        }
+      }
+    </style>
+
+    <!-- Load Font Awesome more efficiently -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link
+      rel="stylesheet"
+      href="style.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+
     <meta
       name="description"
       content="Aryan Patel - Computer Engineering student and web developer based in Ahmedabad, India."
     />
-    <!-- Fix Font Awesome version to an existing one (6.4.0) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
     <title>Aryan Patel | Portfolio</title>
   </head>
   <body>
+    <!-- ...existing body content... -->
     <div class="grid-2">
       <div class="section-1">
         <i class="fas fa-code fa-5x white"></i>
@@ -180,6 +244,6 @@
         </footer>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
