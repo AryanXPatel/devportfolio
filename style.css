@@ -138,6 +138,11 @@ ul {
   transition: all var(--transition-normal);
   padding: 0.5rem;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .social-icons a:hover {
@@ -215,6 +220,8 @@ ul {
   position: relative;
   overflow: hidden;
   border-left: 3px solid var(--accent-color);
+  aspect-ratio: 3/2;
+  contain: layout;
 }
 
 .project-card:hover {
@@ -355,6 +362,7 @@ footer {
 
   .skills-list {
     gap: 0.8rem;
+    min-height: 50px;
   }
 
   .contact-links {
@@ -439,4 +447,20 @@ footer {
   .view-github {
     display: none;
   }
+}
+
+/* Prevent layout shifts for fontawesome icons */
+i[class^="fa"] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Prevent text shifting during font loading */
+h1,
+h2,
+h3,
+p {
+  font-family: "Roboto", sans-serif;
+  max-height: 999999px; /* Prevent text size adjustments */
 }
