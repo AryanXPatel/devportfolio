@@ -1,5 +1,185 @@
 <!DOCTYPE html>
-<body>
-  <h1>HIIIIIIII!!!!!</h1>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Aryan Patel - Computer Engineering student and web developer based in Ahmedabad, India."
+    />
+    <!-- Fix Font Awesome version to an existing one (6.4.0) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Aryan Patel | Portfolio</title>
+  </head>
+  <body>
+    <div class="grid-2">
+      <div class="section-1">
+        <i class="fas fa-code fa-5x white"></i>
+        <h1>Aryan Patel</h1>
+        <p>Ahmedabad, India</p>
+        <div class="social-icons">
+          <a
+            href="https://x.com/aryanxpatel"
+            target="_blank"
+            title="Twitter/X"
+            aria-label="Twitter/X Profile"
+          >
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aryanxpatel/"
+            target="_blank"
+            title="LinkedIn"
+            aria-label="LinkedIn Profile"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/aryanxpatel"
+            target="_blank"
+            title="GitHub"
+            aria-label="GitHub Profile"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="mailto:patelaryanemail@gmail.com"
+            title="Email"
+            aria-label="Send Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <nav class="mobile-nav">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="section-2">
+        <section id="about" class="about-section">
+          <h2>About</h2>
+          <p>
+            I'm a Computer Engineering student passionate about web development,
+            AI, and solving real-world problems through code. I enjoy building
+            efficient, scalable applications and constantly learning new
+            technologies.
+          </p>
+
+          <div class="skills">
+            <h3>Skills</h3>
+            <ul class="skills-list">
+              <li class="skill-item">HTML/CSS</li>
+              <li class="skill-item">Java</li>
+              <li class="skill-item">JavaScript</li>
+              <li class="skill-item">React</li>
+              <li class="skill-item">React Native</li>
+              <li class="skill-item">Node.js</li>
+              <li class="skill-item">Git/GitHub</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+          <h2>Projects</h2>
+          <div class="project-cards">
+            <div class="project-card">
+              <h3>
+                <a
+                  href="https://scrib.patelaryan.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Scrib – Minimal Writing App
+                </a>
+              </h3>
+              <p>
+                A distraction-free writing tool built for clean, local-first
+                note-taking. Features include dark mode, local storage autosave,
+                import/export, responsive design and quick sharing with QR code.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://scrib.patelaryan.com"
+                  class="view-live"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> View Live
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>
+                <a
+                  href="https://parikhseeds.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Parikh Seeds Website
+                </a>
+              </h3>
+              <p>
+                Developed the official website for Parikh Seeds, an agricultural
+                seeds company. Built with performance and accessibility in mind,
+                showcasing products, contact forms, and SEO optimization.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://parikhseeds.com"
+                  class="view-live"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> View Live
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <h3>React Native Order & Sales Management App</h3>
+              <p>
+                Developed a multi-platform mobile application using React Native
+                for managing orders, tracking sales, and maintaining customer
+                records. Features include real-time database integration, secure
+                user authentication, and a clean, intuitive UI optimized for
+                Android, iOS and desktop devices.
+              </p>
+              <!-- Optional: Uncomment when available -->
+              <!-- <div class="project-links">
+                <a href="https://github.com/aryanxpatel/react-native-app" class="view-github" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+          <h2>Contact</h2>
+          <p>
+            I'm currently open to new opportunities. Feel free to reach out if
+            you'd like to connect!
+          </p>
+          <div class="contact-links">
+            <a href="mailto:patelaryanemail@gmail.com" class="email-link">
+              <i class="fas fa-envelope"></i> patelaryanemail@gmail.com
+            </a>
+          </div>
+        </section>
+
+        <footer>
+          <p>&copy; 2025 Aryan Patel. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
